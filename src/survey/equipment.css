@@ -1,0 +1,65 @@
+.expedition .boat-station[data-station=gear] {--paper:#e7eeeb;--ink:#253f47;--muted-ink:#657c80;width:min(620px,calc(100% - 24px));padding:22px 26px;box-shadow:0 18px 70px #041a2866;border:1px solid #f6ffff88;border-radius:10px}
+.boat-station[data-station=gear] .station-header {margin-bottom:12px}
+.boat-station[data-station=gear] .station-header h2 {font:500 26px/1.15 system-ui,sans-serif;letter-spacing:-.04em}
+.boat-station[data-station=gear] .station-header .exp-eyebrow {font-size:9px;margin-bottom:4px}
+.boat-station[data-station=gear] .station-tabs {margin-bottom:8px;gap:24px;border-color:#bdcecb}
+.boat-station[data-station=gear] .station-tabs button {padding-bottom:8px;font-size:12px}
+.expedition .station-page[data-station-page=gear] {display:block}
+.expedition .plan .equipment-station {border:0;padding:0;margin:0}
+.equipment-base {display:flex;gap:12px;align-items:center;margin:0 0 12px}
+.equipment-rig {display:block;width:42%;max-width:190px;height:auto;aspect-ratio:360/300;flex-shrink:0}
+.equipment-base-copy {flex:1;min-width:0}
+.expedition .plan .equipment-station h3 {font:600 12px/1.3 system-ui,sans-serif;letter-spacing:0;text-transform:none;margin:0;color:#3b565d}
+.expedition .plan .equipment-base p {font:11px/1.45 system-ui,sans-serif;color:#6d8284;margin:7px 0 0;max-width:200px}
+.equipment-backs {display:flex;gap:4px;margin-top:8px}
+.equipment-card {position:relative;min-width:0;display:flex}
+.equipment-card>.equipment-item {width:100%;height:100%}
+.equipment-backs .equipment-card {flex:1}
+.expedition .plan .equipment-backs button[data-back] {width:100%;min-height:38px;padding:5px 29px 5px 7px;font:12px/1.3 system-ui,sans-serif;border:1px solid #bdcdcb;background:#ffffff55;border-radius:6px;white-space:nowrap;color:#526f73}
+.expedition .plan .equipment-backs button[aria-pressed=true] {background:#315e65;border-color:#315e65;color:#f3faf8}
+.equipment-heading {display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.equipment-heading>span {font:10px/1.3 system-ui,sans-serif;color:#758b8e}
+.expedition .plan .equipment-hint {font:11px/1.45 system-ui,sans-serif;color:#73888a;margin:5px 0 8px}
+.equipment-slots {display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.expedition .plan .equipment-item {position:relative;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid transparent;background:#f5f8f480;color:#38545c;border-radius:8px;padding:4px 4px 8px;box-shadow:none;transition:background .12s,border-color .12s}
+.equipment-item canvas {display:block;width:80px;height:70px;max-width:100%;object-fit:contain}
+.equipment-item>span {font:12px/1.3 system-ui,sans-serif;text-align:center;text-wrap:balance}
+.equipment-item small {font:10px/1.4 system-ui,sans-serif;color:#758a8c}
+.expedition .plan .equipment-item[aria-pressed=true] {background:#d5e4e1;border-color:#5e8a8a;color:#2c525b}
+.expedition .plan .equipment-item:hover:not(:disabled) {background:#eef6f1;border-color:#87a6a5}
+.expedition .plan .equipment-slots .equipment-item {flex-direction:row;justify-content:start;min-height:100px;padding:15px 8px 9px;border-color:#bdcecb;background:#f4f8f3}
+.expedition .plan .equipment-slots .equipment-item[aria-pressed=true] {border-color:#427981;box-shadow:inset 0 0 0 1px #427981;background:#e0ede7}
+.equipment-slots .equipment-item canvas {width:66px;height:66px;flex-shrink:0}
+.equipment-slot-copy {display:grid;gap:4px;text-align:left!important}
+.equipment-slot-copy strong {font:500 12px/1.3 system-ui,sans-serif}
+.equipment-number {position:absolute;top:6px;left:9px;font:9px/1 ui-monospace,monospace!important;letter-spacing:.1em}
+.expedition .plan .equipment-item.empty {border-style:dashed;background:#ffffff20}
+.equipment-shelf {margin:17px 0 12px}
+.equipment-items {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:7px}
+.equipment-packed-mark {position:absolute;top:9px;left:9px;font:10px/1 system-ui,sans-serif;color:#417b72}
+.expedition .plan .equipment-info {position:absolute;top:1px;right:1px;width:32px;min-height:32px;height:32px;border:0;border-radius:6px;background:transparent;box-shadow:none;color:#637e82;font:18px/1 system-ui,sans-serif;padding:0}
+.expedition .plan .equipment-info[aria-expanded=true] {background:#315e65;color:#fff}
+.expedition .plan .equipment-info:hover:not(:disabled) {background:#d5e4e1;color:#315e65;border:0}
+.expedition .plan .equipment-info[aria-expanded=true]:hover:not(:disabled) {background:#315e65;color:#fff}
+.equipment-backs [aria-pressed=true]+.equipment-info {color:#c3dedb!important}
+.equipment-info-heading {display:flex;align-items:center;justify-content:space-between;gap:8px}
+.expedition .plan .equipment-info-close {min-height:36px;min-width:36px;border:0;background:transparent;color:#547478;padding:0;font-size:23px}
+.equipment-detail {border-top:1px solid #bdcecb;padding-top:12px;scroll-margin-bottom:86px}
+.equipment-detail h4 {font:600 12px/1.4 system-ui,sans-serif;margin:0;color:#35575d}
+.expedition .plan .equipment-effect {font:12px/1.5 system-ui,sans-serif;margin:5px 0 10px;color:#637b80}
+.expedition .plan .equipment-purpose {font:12px/1.5 system-ui,sans-serif;margin:4px 0 8px;color:#3d6267}
+.expedition .plan .equipment-feedback {font:11px/1.4 system-ui,sans-serif;margin:7px 0 0;color:#3c766b}
+.equipment-feedback:empty {display:none}
+.expedition .boat-station[data-station=gear] .station-footer {position:sticky;bottom:0;background:var(--paper);padding:12px 0 10px;margin-top:14px;z-index:3;border-color:#bdcecb}
+.boat-station[data-station=gear] .station-footer .exp-primary {border-radius:6px;background:#315e65;border-color:#315e65;font-size:13px;padding:11px 20px}
+@media(max-width:450px){
+  .expedition .boat-station[data-station=gear]{padding:17px 16px}
+  .equipment-base{gap:8px;margin-bottom:9px}.equipment-rig{width:43%}
+  .expedition .plan .equipment-slots .equipment-item{flex-direction:column;justify-content:center;padding:13px 3px 9px;min-height:104px}
+  .equipment-slots .equipment-item canvas{width:64px;height:56px}
+  .equipment-slot-copy{gap:1px;text-align:center!important}
+  .equipment-slot-copy strong{font-size:11px}.equipment-items .equipment-item>span{font-size:11px}
+  .equipment-items .equipment-item canvas{width:72px;height:63px}
+  .equipment-shelf{margin-top:14px}.equipment-backs{gap:3px}
+  .expedition .plan .equipment-backs button[data-back]{padding:5px 27px 5px 4px;font-size:10px}
+}

@@ -1,0 +1,127 @@
+.expedition {
+  --paper: #ece5d1; --ink: #283c37; --muted-ink: #657068; --gold: #ddbb79;
+  position: fixed; inset: 0; z-index: 12; overflow: auto;
+  color: #f8f0dc; background: #183830; isolation: isolate;
+  -webkit-user-select: text; user-select: text;
+}
+.expedition[hidden], .expedition [hidden] {display:none !important}
+.boat-scene, .boat-shade {position:fixed; inset:0; pointer-events:none; z-index:-2}
+.boat-scene {display:block; width:100%; height:100%}
+.boat-shade {z-index:-1; background:linear-gradient(90deg,#061b2ad9,transparent 75%),linear-gradient(0deg,#06182580,transparent 35%); transition:background .4s}
+.expedition button {cursor:pointer; touch-action:manipulation; font-family:inherit; font-size:14px; min-height:44px; border-radius:2px; transition:background .15s,border-color .15s; }
+.expedition button:focus-visible, .expedition select:focus-visible {outline:2px solid #e8b656; outline-offset:4px}
+.expedition button:disabled {cursor:default}
+.expedition h2:focus {outline:none}
+.exp-eyebrow {margin:0 0 12px; font:500 10px/1.5 ui-monospace,monospace; letter-spacing:.19em; text-transform:uppercase; color:var(--gold)}
+.exp-menu {margin:0; padding:clamp(36px,10vh,110px) max(28px,8vw); width:min(490px,100%); box-sizing:border-box; min-height:100%; display:flex; flex-direction:column; justify-content:center}
+.exp-menu h1 {font:400 clamp(43px,5.4vw,82px)/1 Georgia,serif; letter-spacing:.12em; white-space:nowrap; margin-left:-3px}
+.exp-premise {font:18px/1.6 Georgia,serif; margin:25px 0 30px; color:#d1d9cc; text-wrap:balance}
+.exp-menu-actions {display:grid; gap:8px; max-width:310px}
+.exp-menu-actions button {text-align:left; padding:13px 17px; background:#081f226b; color:#f3eedf; border:1px solid #c9ddca44; display:flex; justify-content:space-between}
+.exp-menu-actions button:hover {background:#28423ed9; border-color:#d3c6a3}
+.exp-menu-actions [data-boat=expeditions] {align-items:center}
+.exp-menu-actions [data-boat=expeditions] small {display:block;margin-top:3px;color:#d4e1d8;font:12px/1.3 system-ui,sans-serif}
+.expedition .exp-primary {background:#e8d7ad; color:#24362f; border:1px solid #f0deba; padding:13px 22px; font-weight:600; box-shadow:0 3px 10px #0002}
+.expedition .exp-primary:hover {background:#f7eac8; border-color:#fff6df}
+.exp-resume {font:11px/1.6 ui-monospace,monospace; color:#b8c6bc; margin:21px 0 0}
+.boat-home {position:absolute; inset:0; margin:0; min-height:360px}
+.boat-home:focus {outline:none}
+.boat-top {position:absolute; top:max(20px,env(safe-area-inset-top)); left:3.5vw; right:3.5vw; display:flex; justify-content:space-between; align-items:center; gap:20px}
+.boat-top button {color:#f3f9fc; background:#09233588; border:1px solid #daeaf033; padding:9px 13px; backdrop-filter:blur(8px)}
+.boat-top .boat-chapter {text-align:right; max-width:75%;background:transparent;border:0;backdrop-filter:none;padding:0;text-shadow:0 1px 8px #092335}
+.boat-chapter small {display:block;font:10px/1.5 ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+.boat-chapter span {display:block;font:16px/1.5 Georgia,serif}
+.expedition[data-light=day] .boat-top .boat-chapter {color:#173c51;text-shadow:0 1px 5px #e6f8ff}
+.boat-menu-button {display:grid; place-items:center;width:44px}
+.boat-objects {position:absolute; inset:0; pointer-events:none}
+.expedition .boat-object {position:absolute;pointer-events:auto;display:block;background:transparent;border:0;padding:0;box-shadow:none;transform:translate(-50%,-50%);min-width:44px;min-height:44px}
+.expedition .boat-object:hover {background:transparent}
+.boat-object i {position:absolute;left:50%;top:50%;width:8px;height:8px;transform:translate(-50%,-50%);border:1.5px solid #f5fdff;border-radius:50%;background:#e5f6ff66;box-shadow:0 0 0 4px #18334340,0 1px 8px #001f36}
+.boat-object span {position:absolute;top:calc(50% + 19px);left:50%;transform:translateX(-50%);white-space:nowrap;font:12px/1.4 system-ui,sans-serif;color:#e9f8ff;background:#132c3be8;border:1px solid #c8e0eb55;padding:5px 9px;opacity:0;pointer-events:none;transition:opacity .15s}
+.expedition .boat-object:focus-visible {outline:0}
+.boat-object:focus-visible i {outline:2px solid #ffd17d;outline-offset:5px}
+.boat-object:focus-visible span {opacity:1}
+@media(hover:hover) and (min-width:700px){.boat-object:hover span{opacity:1}.boat-object:hover i{background:#f4fcff;box-shadow:0 0 0 5px #bdedff55,0 0 18px #7edeff}}
+.boat-launch {position:absolute;bottom:max(25px,env(safe-area-inset-bottom));left:3.5vw;right:3.5vw;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0;background:transparent;border:0;box-shadow:none;pointer-events:none}
+.boat-launch>div {text-shadow:0 1px 6px #061a29;pointer-events:auto}.boat-task {margin:0;font:14px/1.5 Georgia,serif;max-width:240px;color:#eff7fa}
+.boat-launch .exp-primary {min-width:120px;display:flex;gap:24px;justify-content:space-between;align-items:center;pointer-events:auto;padding:12px 17px}
+.expedition .boat-next {padding:0;margin:1px 0 -8px;min-height:36px;background:none;border:0;color:#f0d399;text-decoration:underline;font-size:12px}
+.boat-touch-hint {position:absolute;bottom:100px;left:20px;right:20px;text-align:center;margin:0;color:#edf7fa;font:11px/1.5 system-ui,sans-serif;text-shadow:0 1px 5px #092335;pointer-events:none;opacity:.8}
+.expedition[data-screen=boat] .boat-shade {background:linear-gradient(0deg,#041c2860,transparent 32%)}
+.expedition[data-screen=station] .boat-scene, .expedition[data-screen=chapters] .boat-scene, .expedition[data-screen=result] .boat-scene {filter:blur(1px)}
+.expedition[data-screen=station] .boat-shade, .expedition[data-screen=chapters] .boat-shade, .expedition[data-screen=result] .boat-shade {background:#08202188}
+.exp-paper {position:relative; box-sizing:border-box; background:var(--paper); color:var(--ink); width:min(800px,calc(100% - 48px)); margin:4vh auto; padding:26px 30px; border:1px solid #fff3cd80; box-shadow:3px 4px 0 #bfb69c,0 16px 60px #0006; border-radius:2px; color-scheme:light}
+.station-header {display:flex; align-items:flex-start; justify-content:space-between; gap:20px; margin-bottom:20px}
+.station-header h2 {font:400 clamp(25px,3vw,34px)/1.15 Georgia,serif; margin:0; color:var(--ink)}
+.station-header .exp-eyebrow {color:#6b745d; margin:0 0 6px}
+.exp-paper .station-header>button {border:1px solid #69796770; background:transparent; color:#4d5b4c; font:28px/1 Georgia,serif; width:44px; padding:0}
+.chapters-caption,.chapter-foot {font:14px/1.55 Georgia,serif; color:#5b665a; margin:10px 0 20px; max-width:590px}
+.chapter-list {display:grid; gap:12px}
+.journal-question {border-left:3px solid #718271;padding:2px 0 2px 16px;margin:8px 0 26px}
+.journal-question small,.journal-entry small {font:10px/1.5 system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#67745e}
+.expedition .journal-question h3 {font:25px/1.2 Georgia,serif;margin:7px 0;color:var(--ink);text-transform:none;letter-spacing:0}
+.journal-question p,.journal-entry p {font:14px/1.55 Georgia,serif;margin:6px 0}
+.journal-label {font:11px/1.4 system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#64715b;margin:26px 0 12px}
+.journal-entry {padding:15px 0;border-bottom:1px solid #a8b09880}
+.journal-entry h4 {font:20px/1.25 Georgia,serif;margin:6px 0}
+.expedition .journal-more {margin-top:16px;background:transparent;border:1px solid #8c9980;color:var(--ink);font:12px/1.4 system-ui,sans-serif;padding:10px 14px}
+.expedition .chapter-card {display:flex; gap:20px; align-items:flex-start; width:100%; padding:22px; color:var(--ink); border:1px solid #bdc0a8; background:#f7f0dc; text-align:left}
+.chapter-card:hover:not(:disabled) {background:#fff9e5; border-color:#778a6a}
+.chapter-card[aria-current=step] {border-left:4px solid #527365; padding-left:19px}
+.chapter-card:disabled {opacity:.58; background:#e2dccb}
+.chapter-index {font:24px/1 Georgia,serif; color:#6b7e6c; margin-top:2px}
+.chapter-copy {flex:1; display:grid; gap:8px}
+.chapter-copy strong {font:400 23px/1.2 Georgia,serif}
+.chapter-copy>span {font-size:13px; line-height:1.45}.chapter-copy small {font-size:11px; color:#687661}.chapter-arrow {font-size:20px}.chapter-foot {margin:20px 0 0;font-size:12px}
+.exp-story {margin:0; padding:14vh 8vw; max-width:660px; min-height:100%; box-sizing:border-box; display:flex; flex-direction:column; justify-content:center}
+.exp-story h2 {font:400 clamp(35px,4.5vw,54px)/1.1 Georgia,serif; margin:0 0 40px; text-wrap:balance}
+.story-speaker {color:#e5c98d; font:12px/1.4 ui-monospace,monospace; margin:0 0 10px}
+.story-text {margin:0 0 30px;font:23px/1.55 Georgia,serif; min-height:140px; text-wrap:pretty}
+.story-actions {display:flex; gap:12px; align-items:center;flex-wrap:wrap}.story-actions>button:not(.exp-primary){background:transparent;border:0;color:#dad9bf;font-size:12px;text-decoration:underline}.story-count {font:11px/1.5 ui-monospace,monospace; color:#adbeb4;margin-top:20px}
+.station-tabs {display:flex; gap:20px; border-bottom:1px solid #b7bfab; margin-bottom:20px}
+.expedition .station-tabs button {border:0; border-bottom:2px solid transparent; border-radius:0;background:none;padding:4px 1px 12px;color:#7a806d; min-height:36px}
+.expedition .station-tabs button[aria-current=true]{color:#284c3c;border-bottom-color:#41664d;font-weight:600}
+.expedition #plan {position:static; display:block; padding:0; background:none; overflow:visible}
+.expedition .card.plan {width:100%; max-width:none; margin:0; padding:0; border:0; background:transparent; color:var(--ink)}
+.expedition .plan .phead,.expedition .plan>.pbtns {display:none}
+.station-page {margin:0}.station-page>section:first-child {margin-top:0}
+.expedition .plan .pmap {margin:0;border:1px solid #b8bea7;border-radius:0}
+.expedition .plan h3 {color:#506448; font-size:12px}
+.expedition .plan p,.expedition .plan .note,.expedition .plan .dim,.expedition .plan .rule-example,.expedition .plan .gear-use,.expedition .plan [data-n=gas],.expedition .plan [data-n=rule] {color:#5b6859}
+.expedition .plan .photo-plan {color:var(--ink); margin:0 0 16px}
+.expedition .photo-plan h2 {font:400 24px/1.2 Georgia,serif}.expedition .photo-plan p{font-size:13px;line-height:1.5}
+.expedition .plan button {background:#f7f1df;border:1px solid #aeb9a1;color:#354e3b;box-shadow:none}
+.expedition .plan button:hover:not(:disabled){background:#fff9e8;border-color:#657f60}
+.expedition .plan button[aria-pressed=true],.expedition .plan button.on {background:#d7e0c9;border-color:#58764d;color:#25472c}
+.expedition .plan .slot .slot-state {color:#3d6542}
+.expedition .plan .help {border:0;background:none;padding:0;margin:0}.expedition .plan .survey-album>summary,.expedition .plan .survey-settings>summary {display:none}
+.expedition .plan .pfoot {border:0;margin:0;padding:0}.expedition .plan .snd {color:#43543f;font-size:14px;margin:12px 0;line-height:1.5}
+.expedition .plan input {accent-color:#496c4b}.expedition .plan .tipset {color:#43543f;margin:15px 0}.expedition .plan .tipset [data-n=tipsn] {display:none}
+.expedition .plan .link {background:none;border:0;min-height:32px;text-decoration:underline;padding:3px 0;color:#526849}
+.expedition .plan [data-sec=rule],.expedition .plan [data-sec=gear] {border-color:#b5bea8}
+.expedition .plan .dock-help select {color:#304d38;background:#f8f2de;border-color:#9aaa91}
+.expedition .plan .dock-help p {padding:16px 0; font-size:16px;line-height:1.6}
+.expedition .plan .dock-testing {border-top:1px solid #b5bea8;margin-top:22px;padding-top:12px;font-size:12px;color:#6c765f}
+.expedition .dock-testing summary {cursor:pointer;min-height:32px;line-height:32px}.expedition-reset {margin-top:18px;border-top:1px solid #b5bea8;padding-top:12px}
+.expedition .dock-album-grid {grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.expedition .dock-album-grid button{padding:6px;box-shadow:1px 3px 5px #4b462522;transform:rotate(-1deg)}.expedition .dock-album-grid button:nth-child(even){transform:rotate(1deg)}
+.station-footer {display:flex;gap:20px;justify-content:space-between;align-items:center;border-top:1px solid #b5bea8;margin-top:25px;padding-top:18px}
+.expedition .station-back {background:none;border:0;color:#56684e;padding:6px 0;font-size:12px}
+.exp-paper .exp-primary {background:#335844;border-color:#335844;color:#f3ebd5}.exp-paper .exp-primary:hover {background:#436b52;color:#fff8e5;border-color:#436b52}
+.expedition #result {padding:28px 24px;z-index:2;background:none;position:absolute;min-height:100%; overflow:auto}
+.expedition[data-screen=plunge] .boat-scene {filter:blur(2px)}
+.plunge-wash {position:fixed;inset:0;pointer-events:none;opacity:0;z-index:9;background:radial-gradient(ellipse at 50% 40%,#558b8d55,#051c26 80%)}
+.expedition[data-screen=plunge] .plunge-wash {animation:boat-submerge .85s ease-in forwards}
+.plunge-caption {position:fixed;z-index:10;top:45%;left:0;right:0;text-align:center;font:15px/1.5 Georgia,serif;letter-spacing:.12em;color:#c2dddd}
+@keyframes boat-submerge {0%{opacity:0}35%{opacity:.25}100%{opacity:1}}
+@media(min-width:1000px){.boat-station[data-station=gear]{max-width:830px}.station-page[data-station-page=gear]{display:grid;grid-template-columns:1fr 1fr;gap:25px}.expedition .plan [data-sec=rule]{margin:0;padding:0;border:0}.station-page[data-station-page=gear]>[data-sec=bottom]{grid-column:1/-1}.station-page[data-station-page=map]{display:grid;grid-template-columns:.9fr 1fr;gap:25px;align-items:start}.expedition .plan .photo-choices{flex-direction:column}}
+@media(max-width:650px){
+  .boat-scene {background-position:54% center}.exp-menu{padding:40px 28px;width:100%;max-width:450px}.exp-menu h1{font-size:51px}.exp-premise{font-size:18px;max-width:310px}.exp-menu-actions{max-width:310px}
+  .boat-top{top:15px;left:17px;right:17px;gap:12px}.boat-top .boat-chapter{padding:0}.boat-chapter span{font-size:14px}
+  .boat-launch{left:19px;right:19px;bottom:max(23px,env(safe-area-inset-bottom));gap:16px}.boat-task{font-size:13px;max-width:205px}.boat-launch .exp-primary{min-width:105px;gap:14px;padding:12px;font-size:13px}
+  .exp-paper{width:calc(100% - 24px);margin:12px auto;padding:21px 18px}.station-header{margin-bottom:15px}.station-header h2{font-size:27px}.station-tabs{margin-bottom:16px;gap:24px}.station-tabs button{font-size:13px!important}
+  .expedition .chapter-card{padding:17px 13px;gap:12px}.chapter-card[aria-current=step]{padding-left:10px}.chapter-index{font-size:20px}.chapter-copy strong{font-size:21px}.chapter-copy>span{font-size:12px}.chapter-arrow{font-size:16px}
+  .exp-story{padding:10vh 27px}.exp-story h2{font-size:38px;margin-bottom:30px}.story-text{font-size:22px;min-height:180px}.story-actions .exp-primary{padding:12px 15px;font-size:13px}
+  .expedition .dock-album-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.expedition #result{padding:18px 15px}
+}
+@media(max-height:500px) and (min-width:651px){.exp-menu{padding:25px 6vw;max-width:500px}.exp-menu h1{font-size:48px}.exp-premise{font-size:15px;margin:15px 0}.exp-resume{margin-top:12px}.exp-menu-actions{gap:5px}.exp-menu-actions button{min-height:38px;padding:8px 13px}.boat-launch{bottom:12px}.boat-touch-hint{bottom:75px}.exp-story{padding:28px 6vw;max-width:750px}.exp-story h2{font-size:32px;margin-bottom:15px}.story-text{font-size:19px;min-height:0;margin-bottom:16px}.story-count{margin:8px 0 0}}
+@media(prefers-reduced-motion:reduce){.expedition *{transition:none!important;animation:none!important}}

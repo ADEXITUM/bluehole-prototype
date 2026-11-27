@@ -1,0 +1,112 @@
+.photo-plan {margin:12px 0;color:var(--text)}
+.photo-plan h2 {font-size:1.12rem;margin:0 0 5px}
+.photo-plan p {font-size:.9rem;line-height:1.4;margin:6px 0}
+.photo-choices {display:flex;gap:8px;margin:10px 0}
+.photo-choices button {flex:1;min-height:48px;line-height:1.25;padding:7px 8px}
+.photo-choices button[aria-pressed=true] {border-color:var(--amber);background:#3d3220}
+.photo-choices button:disabled {opacity:.65}
+.photo-choices small {display:block;font-size:.74rem;font-weight:400}
+.photo-plan .photo-instruction {font-size:.82rem;color:#b6cbd0}
+.survey-settings .pfoot {margin:4px 0 8px; border:0}
+.dock-album-grid {display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin-bottom:8px}
+.dock-album-grid button {padding:4px; text-align:left; font-size:12px; line-height:1.35}
+.dock-album-grid img {display:block; width:100%; aspect-ratio:1; object-fit:contain}
+.dock-album-grid span {display:block; padding:5px 2px}
+.plan [data-sec="rule"],
+.plan [data-sec="gear"] {
+  padding: 12px 0;
+  border-top: 1px solid #31505b;
+}
+.plan .rule-example,
+.plan [data-n="rule"],
+.plan [data-n="gas"],
+.plan .gear-use {
+  font-size: .86rem;
+  line-height: 1.45;
+  color: #c2d8da;
+  margin: 6px 0 10px;
+}
+.plan [data-k="rule"],
+.plan [data-k="back"] {
+  display: flex;
+  gap: 6px;
+}
+.plan [data-k="rule"] button,
+.plan [data-k="back"] button {
+  min-height: 44px;
+  flex: 1 1 0;
+  padding: 6px 3px;
+}
+.plan [data-k="rule"] b,
+.plan [data-k="rule"] small {
+  display: block;
+}
+.plan [data-k="rule"] small {
+  font-size: .71rem;
+  font-weight: 400;
+  margin-top: 3px;
+}
+.plan .gas-budget {
+  display: flex;
+  gap: 3px;
+  margin: 12px 0 6px;
+}
+.gas-budget span {
+  display: grid;
+  align-content: start;
+  flex-basis: 0;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  border-top: 5px solid;
+  padding-top: 3px;
+}
+.gas-budget .budget-out {border-color: #e4ac49}
+.gas-budget .budget-home {border-color: #86cacc}
+.gas-budget .budget-spare {border-color: #8b9fac}
+.gas-budget small {font-size: .72rem}
+.plan .slots {gap: 6px}
+.plan .gear-ready {
+  display: grid;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 10px;
+  font-size: .9rem;
+  line-height: 1.4;
+}
+.plan .gear-ready li::before {content: "✓"; margin-right: 9px; color: #779b79}
+.plan .gear-ready-note {font-size: .84rem; line-height: 1.45; margin: 10px 0 16px}
+.plan .gear-choices-title {font-size: .85rem; margin: 18px 0 9px}
+.plan .slot {
+  text-align: left;
+  padding: 8px 10px;
+  min-height: 44px;
+}
+.plan .slot span,
+.plan .slot .slot-state {
+  display: block;
+  margin-top: 4px;
+  line-height: 1.35;
+  font-size: .79rem;
+}
+.plan .slot .slot-state {font-weight: 600; color: #a5dcdf}
+.plan [data-n="slotsn"] {font-size: .8rem; margin: 7px 0}
+.plan .survey-settings [data-sec="deck"] {margin: 4px 0 10px}
+.plan .pbtns {margin: 10px 0}
+.plan .survey-settings summary,
+.plan .survey-album summary {padding-block: 9px}
+.plan .dock-help label {display:block; margin-bottom:5px; font-weight:600}
+.plan .dock-help select {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 44px;
+  padding: 6px 8px;
+  border: 1px solid #45636e;
+  border-radius: 6px;
+  background: #122630;
+  color: #e8f1ef;
+  font: inherit;
+  font-size: 1rem;
+}
+.plan .dock-help select:focus-visible {outline: 2px solid var(--amber); outline-offset: 2px}
+.plan .dock-help p {margin: 7px 0; font-size: .88rem; line-height: 1.45}

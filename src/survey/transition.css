@@ -1,0 +1,60 @@
+.dive-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  overflow: hidden;
+  pointer-events: auto;
+  touch-action: none;
+  isolation: isolate;
+}
+.dive-transition[hidden] {display: none !important}
+.dive-transition-veil {
+  position: absolute;
+  inset: 0;
+  background: #000;
+  opacity: 0;
+}
+.dive-transition[data-phase=closing] .dive-transition-veil {
+  opacity: 1;
+  transition: opacity var(--dive-fade-out) ease-in;
+}
+.dive-transition[data-phase=submerged] .dive-transition-veil {opacity: 1}
+.dive-transition[data-phase=opening] .dive-transition-veil {
+  opacity: 0;
+  transition: opacity var(--dive-fade-in) ease-out;
+}
+.dive-transition-water {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: radial-gradient(ellipse at 50% 8%, #b7e7db30, #12627518 48%, transparent 76%);
+}
+.dive-transition[data-phase=opening]:not(.reduced-motion) .dive-transition-water {
+  animation: dive-water-clear var(--dive-fade-in) ease-out both;
+}
+.dive-transition-water i {
+  --size: calc(9px + var(--bubble) * 3px);
+  position: absolute;
+  left: calc(12% + var(--bubble) * 9%);
+  bottom: calc(-35px + var(--bubble) * 6px);
+  width: var(--size);
+  height: var(--size);
+  border: 1px solid #bfe9e28c;
+  border-radius: 48% 53% 46% 55%;
+  box-shadow: inset 2px 3px 3px #d3ffff28;
+}
+.dive-transition[data-phase=opening]:not(.reduced-motion) .dive-transition-water i {
+  animation: dive-entry-bubble var(--dive-fade-in) ease-out both;
+}
+@keyframes dive-water-clear {
+  0% {opacity: 0}
+  20% {opacity: .8}
+  100% {opacity: 0}
+}
+@keyframes dive-entry-bubble {
+  from {transform: translateY(0) scale(.7)}
+  to {transform: translateY(-48vh) translateX(calc(var(--bubble) * 4px - 16px)) scale(1.4)}
+}
+@media (prefers-reduced-motion: reduce) {
+  .dive-transition-water {display: none}
+}

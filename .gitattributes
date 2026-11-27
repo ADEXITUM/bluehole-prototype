@@ -1,0 +1,9 @@
+/index.html text eol=lf
+/experiment.html text eol=lf
+/src/experiment.template.html text eol=lf
+*.js text eol=lf
+*.mjs text eol=lf
+*.css text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.png binary

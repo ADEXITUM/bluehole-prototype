@@ -1,0 +1,11 @@
+{
+  "name": "bluehole-prototype",
+  "private": true,
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node tests/check-release.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "1.64.0"
+  }
+}

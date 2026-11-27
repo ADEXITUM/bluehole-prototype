@@ -1,0 +1,120 @@
+#ice-expedition {
+  position:fixed; inset:0; z-index:24; margin:0; padding:0; overflow:hidden;
+  background:#0c252f; color:#e8f1e9;
+}
+#ice-expedition[hidden], .ice-dive [hidden] {display:none !important}
+.ice-dive, .ice-dive * {box-sizing:border-box}
+.ice-dive {
+  position:relative; isolation:isolate; width:100%; height:100%; overflow:hidden;
+  display:grid; grid-template-rows:auto auto minmax(0,1fr) auto;
+  background:#0b252f; color:#e6efe8; font:15px/1.45 system-ui,sans-serif;
+}
+.ice-dive:focus {outline:none}
+.ice-dive button {
+  min-height:44px; padding:7px 14px; margin:0; border:1px solid #63838a;
+  border-radius:3px; background:#183b47; color:#ecf3eb; font:600 14px/1.2 system-ui,sans-serif;
+  cursor:pointer; touch-action:manipulation;
+}
+.ice-dive button:hover {background:#254e58}
+.ice-dive button:active {background:#38616a}
+.ice-dive button:focus-visible {outline:3px solid #ffcf79; outline-offset:2px}
+.ice-dive button:disabled {opacity:.55; cursor:default}
+.ice-dive small {
+  display:block; font:600 10px/1.4 ui-monospace,monospace; letter-spacing:.13em;
+  text-transform:uppercase; color:#b1cbc6;
+}
+.ice-top {
+  display:flex; justify-content:space-between; align-items:center; gap:16px;
+  padding:max(env(safe-area-inset-top),10px) max(env(safe-area-inset-right),4vw) 9px max(env(safe-area-inset-left),4vw);
+  background:#0c2732; border-bottom:1px solid #42606a;
+}
+.ice-top h2 {margin:0; font:400 clamp(19px,2.5vw,30px)/1.15 Georgia,serif; color:#f3f2df}
+.ice-instruments {
+  display:grid; grid-template-columns:1.4fr 1fr 1.15fr 1fr; gap:1px;
+  padding:0 max(3vw,env(safe-area-inset-right)) 0 max(3vw,env(safe-area-inset-left));
+  background:#132f3b; border-bottom:2px solid #749597;
+}
+.ice-instruments > div {position:relative; padding:7px 1.2vw 8px; border-right:1px solid #38545e}
+.ice-instruments > div:last-child {border:0}
+.ice-instruments b {display:block; font:600 clamp(14px,1.6vw,20px)/1.4 ui-monospace,monospace; white-space:nowrap}
+.ice-instruments b[data-low="true"] {color:#ffbe79}
+.ice-instruments i {display:block; height:2px; background:#496571}
+.ice-instruments i i {background:#e2bd74}
+.ice-water {position:relative; overflow:hidden; min-height:0}
+.ice-water canvas {display:block; width:100%; height:100%}
+.ice-hint {
+  white-space:pre-line;
+  position:absolute; width:max-content; max-width:calc(100% - 24px); bottom:10px; left:50%; transform:translateX(-50%);
+  padding:7px 12px; background:#09232eeb; color:#edf1df; border-left:2px solid #e1bb75;
+  font-size:clamp(12px,1.4vw,15px); text-align:center; border-radius:2px; pointer-events:none;
+}
+.ice-controls {
+  display:flex; justify-content:space-between; align-items:center; gap:10px;
+  padding:9px max(env(safe-area-inset-right),3vw) max(9px,env(safe-area-inset-bottom)) max(env(safe-area-inset-left),3vw);
+  background:#102d38; border-top:1px solid #56767f; user-select:none;
+}
+.ice-pad {display:grid; grid-template:repeat(2,44px)/repeat(3,minmax(44px,54px)); gap:3px; touch-action:none}
+.ice-pad button {font-size:22px; padding:0; touch-action:none}
+.ice-pad [data-move=up] {grid-area:1/2}
+.ice-pad [data-move=left] {grid-area:2/1}
+.ice-pad [data-move=down] {grid-area:2/2}
+.ice-pad [data-move=right] {grid-area:2/3}
+.ice-tools, .ice-actions {display:flex; flex-wrap:wrap; gap:6px}
+.ice-tools [data-ready=true], .ice-sheet .ice-actions button:first-child {
+  background:#e4c282; border-color:#efdbab; color:#182c32;
+}
+.ice-overlay {
+  position:absolute; z-index:2; inset:0; display:flex; align-items:safe center; justify-content:safe center;
+  overflow:auto; padding:max(14px,env(safe-area-inset-top)) max(14px,env(safe-area-inset-right)) max(14px,env(safe-area-inset-bottom)) max(14px,env(safe-area-inset-left));
+  background:linear-gradient(115deg,#00182480,#08263238 75%,#001b2766);
+}
+.ice-sheet {
+  flex:0 1 495px; padding:clamp(18px,4vw,38px); border:1px solid #9fb4ad;
+  border-top:4px solid #e2c188; color:#243c3e; background:#e7e8d8;
+  box-shadow:0 12px 50px #03192280; user-select:text;
+}
+.ice-sheet small {color:#4c6563}
+.ice-sheet h3 {margin:12px 0; color:#1b3437; font:400 clamp(27px,4vw,43px)/1.07 Georgia,serif; letter-spacing:0; text-transform:none}
+.ice-sheet p {margin:10px 0; font:400 15px/1.5 system-ui,sans-serif; color:#2b4444}
+.ice-sheet .ice-guide {border-top:1px solid #a7bbb1; padding-top:10px; font-size:13px}
+.ice-touch-guide {display:none}
+@media (pointer:coarse) {
+  .ice-touch-guide {display:inline}
+  .ice-key-guide {display:none}
+}
+.ice-sheet .ice-log {color:#485f55; font-size:13px}
+.ice-loadout {margin:14px 0 0; padding:8px 10px; min-width:0; border:1px solid #97aca1; color-scheme:light}
+.ice-loadout legend {padding:0 5px; color:#2a4845; font:600 13px/1.25 system-ui,sans-serif}
+.ice-sheet .ice-loadout p {margin:0 0 5px; font-size:13px}
+.ice-loadout label {display:flex; align-items:center; gap:8px; min-height:44px; padding:5px; cursor:pointer}
+.ice-loadout label:has(:checked) {background:#cedbc9}
+.ice-loadout label:focus-within {outline:2px solid #486965; outline-offset:1px}
+.ice-loadout input {margin:0; width:18px; height:18px; flex:none; accent-color:#245d51}
+.ice-loadout b {font-size:14px}
+.ice-loadout small {color:#3b5751; font:400 12px/1.35 system-ui,sans-serif; text-transform:none; letter-spacing:0}
+.ice-actions {margin-top:18px}
+.ice-west-brief {border-top:1px solid #9db0a4; margin-top:16px; padding-top:12px}
+.ice-west-brief b {color:#304f50; font:600 16px/1.25 Georgia,serif}
+.ice-sheet .ice-west-brief p {margin:5px 0 9px; font-size:13px}
+.ice-west-record .ice-track {background:repeating-linear-gradient(90deg,#f0c188 0 2px,transparent 2px 4px);
+  clip-path:polygon(0 48%,13% 47%,15% 0,18% 20%,27% 41%,39% 48%,53% 46%,55% 7%,59% 29%,68% 42%,80% 47%,100% 49%,100% 52%,72% 54%,61% 66%,55% 94%,53% 55%,39% 52%,28% 60%,18% 79%,15% 100%,13% 55%,0 52%)}
+.ice-record {margin-top:16px; background:#163842; padding:8px; display:flex; align-items:center; gap:10px}
+.ice-track {flex:1; height:36px; background:repeating-linear-gradient(90deg,#abc9be 0 2px,transparent 2px 4px);
+  clip-path:polygon(0 49%,8% 45%,15% 27%,21% 40%,31% 13%,38% 28%,49% 4%,56% 26%,64% 19%,77% 42%,83% 35%,100% 49%,100% 52%,86% 62%,76% 57%,63% 80%,54% 71%,48% 99%,37% 76%,32% 85%,21% 62%,15% 72%,6% 54%,0 52%)}
+@media(max-width:630px) {
+  .ice-controls {align-items:end}
+  .ice-tools {display:grid; grid-template-columns:1fr 1fr; max-width:260px; gap:3px; flex:1}
+  .ice-tools button {padding:5px; font-size:12px}
+  .ice-tools [data-ice=work] {grid-column:span 2}
+  .ice-pad {grid-template-columns:repeat(3,44px)}
+  .ice-instruments small {font-size:9px; letter-spacing:.06em}
+}
+@media(max-height:510px) and (min-width:550px) {
+  .ice-top {position:absolute; z-index:1; top:5px; right:max(8px,env(safe-area-inset-right)); border:0; padding:0; background:none}
+  .ice-top > div {display:none}
+  .ice-dive {grid-template-rows:auto minmax(0,1fr) auto}
+  .ice-instruments {padding-right:95px}
+  .ice-controls {padding-top:4px; padding-bottom:max(4px,env(safe-area-inset-bottom))}
+  .ice-pad {display:flex}
+  .ice-pad button {width:46px; height:44px}
+}
